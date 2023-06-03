@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+ crossorigin="anonymous">
+ 
+ 
+ 
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant:400,700">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <style>
+ /*NAVBAR*/
+
+ .navbar-brand img {
+        width: 140px; /* Adjust the width to your desired size */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 10px; /* Add margin to the right if needed */
+      }
+      /* Custom CSS */
+      .navbar {
+        /* background-color: #85f687;*/
+        background-color: #cadcec;
+        height: 70px;
+        position: relative;
+        z-index: 9999; /* Increase the height of the navbar */
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-left: 60px;
+      }
+
+      .navbar-nav .nav-item .nav-link {
+        font-size: 18px;
+        padding-right: 40px;
+
+        color: #333;
+      }
+
+      .navbar-nav .nav-item .nav-link:hover {
+        color: #007bff;
+      }
+
+      /* Move navigation items to the right */
+      .navbar-nav {
+        margin-left: 25rem;
+      }
+      /* green #62CECE*/
+
+      /* Custom style for navbar links and logo */
+      .navbar-brand {
+        color: red; /* Change the color of the logo */
+      }
+
+      .navbar-toggler-icon {
+        background-color: rgb(
+          0,
+          0,
+          0
+        ); /* Change the background color of the button */
+      }
+      .nav-link:hover {
+        color: #f4fcfc !important; /* Change the text color to #F4FCFC */
+        background-color: #62cece !important; /* Change the box color to #62CECE */
+        border-radius: 10px; /* Make the box corners round */
+      }
+
+      /* SECTION1 */
+      .section1 {
+        background-color: #cadcec;
+        height: 41rem; /* Adjust the height as needed */
+        position: relative;
+        bottom: 70px;
+      }
+
+      .home-page-image {
+        width: 455px;
+        height: 558px;
+        position: absolute;
+        top: 13vh;
+        left: 50rem;
+      }
+
+      .container-fluid {
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+      
+      /* CSS for the main container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* CSS for the sections */
+section {
+  padding: 40px 0;
+}
+
+/* CSS for the heading */
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* CSS for the paragraphs */
+p {
+  margin-bottom: 20px;
+}
+
+/* CSS for the unordered list */
+ul {
+  margin-bottom: 20px;
+}
+
+/* CSS for the list items */
+li {
+  margin-bottom: 10px;
+}
+
+/* CSS for the images */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/* CSS for the footer */
+.footer {
+  background-color: #f8f9fa;
+  padding: 40px;
+  color: #555;
+  font-size: 14px;
+}
+
+/* CSS for the footer columns */
+.footer .col {
+  margin-bottom: 20px;
+}
+
+/* CSS for the footer headings */
+.footer h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* CSS for the footer links */
+.footer a {
+  color: #555;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* CSS for the copyright text */
+.footer p {
+  margin-bottom: 0;
+}
+description{
+    position: relative;
+    top: 12rem;
+    left: 6rem;
+    font-size: 45px;
+}
+ 
+    
+  </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+        <a class="navbar-brand" th:href="@{homePage}"><img src="images/Logo1.png" alt="OPDcare" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item ">
+              <a class="nav-link text-center" th:href="@{homePage}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" th:href="@{patientPage}">Patient</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" th:href="@{doctorPage}">Doctor</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" th:href="@{receptionistPage}"
+                >Receptionist</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" th:href="@{adminPage}">Admin</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link text-center" th:href="@{aboutus}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-center" th:href="@{contactus}">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br>
+      
+      </section>
+  </div>
+
+  <!--
+   <section class="hero">
+    <div class="overlay"></div>
+    <div class="quote-container">
+      <h1 class="quote">"For compassionate care and exceptional medical expertise, welcome to our Clinic OPD, where your health is our priority"</h1>
+    </div>
+  </section>
+  <section>
+    -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <img src="images/aboutus.png" alt="About" class="img-fluid">
+      </div>
+      <div class="col-md-6">
+        <h2>About Us</h2>
+        <p>Welcome to Clinic OPD, a leading healthcare provider dedicated to delivering exceptional medical services to our patients. With a team of highly skilled doctors and state-of-the-art facilities, we strive to provide comprehensive care and personalized treatment options.</p>
+        <p>At Clinic OPD, we prioritize patient well-being and aim to create a comfortable and compassionate environment for all individuals. Our commitment to excellence, innovation, and integrity ensures that each patient receives the highest quality of care.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <div class="footer">
+    <div class="row">
+      <div class="col">
+        <h4>About Us</h4>
+        <p>
+          Clinic OPD Management System is a comprehensive solution for managing clinic operations efficiently. We aim to provide the best healthcare services to our patients.
+        </p>
+      </div>
+      <div class="col">
+        <h4>Services</h4>
+        <ul>
+          <li><a >OPD Appointments</a></li>
+          <li><a >Patient Management</a></li>
+          <li><a >Doctor Scheduling</a></li>
+          <li><a >Billing and Payments</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Contact Us</h4>
+        <p>
+          123 Clinic Street, City<br>
+          State, Country<br>
+          Phone: 123-456-7890<br>
+          Email: info@clinicopd.com
+        </p>
+      </div>
+    </div>
+    <p>&copy; 2023 Astitva Ghanmode. All rights reserved. | 
+    <a >Privacy Policy</a> | 
+    <a >Terms of Service</a></p>
+  </div>
+  
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+
+
+</body>
+</html>

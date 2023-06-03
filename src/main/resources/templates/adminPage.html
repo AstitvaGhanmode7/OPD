@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+ crossorigin="anonymous">
+ 
+ 
+ 
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant:400,700">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ 
+ <style>
+  /*NAVBAR*/
+      .navbar-brand img {
+        width: 140px; /* Adjust the width to your desired size */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 10px; /* Add margin to the right if needed */
+      }
+      /* Custom CSS */
+      .navbar {
+        background-color: #cadcec;
+        height: 70px;
+        position: relative;
+        z-index: 9999; /* Increase the height of the navbar */
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-left: 60px;
+      }
+
+      .navbar-nav .nav-item .nav-link {
+        font-size: 18px;
+        padding-right: 40px;
+
+        color: #333;
+      }
+
+      .navbar-nav .nav-item .nav-link:hover {
+        color: #007bff;
+      }
+
+      /* Move navigation items to the right */
+      .navbar-nav {
+        margin-left: 25rem;
+      }
+      /* green #62CECE*/
+
+      /* Custom style for navbar links and logo */
+      .navbar-brand {
+        color: red; /* Change the color of the logo */
+      }
+
+      .navbar-toggler-icon {
+        background-color: rgb(
+          0,
+          0,
+          0
+        ); /* Change the background color of the button */
+      }
+      .nav-link:hover {
+        color: #f4fcfc !important; /* Change the text color to #F4FCFC */
+        background-color: #62cece !important; /* Change the box color to #62CECE */
+        border-radius: 10px; /* Make the box corners round */
+      }
+      /*
+      body {
+        background-image: url("images/bg2.jpg");
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+*/
+      /* BUTTONS */
+
+      .container-fluid div a {
+        color: black;
+      }
+
+      #signin {
+        position: relative;
+        top: 7rem;
+        left: 5rem;
+      }
+
+      #register {
+        position: relative;
+        top: 19rem;
+        right: 5rem;
+      }
+
+      .container-fluid div a:hover {
+        color: #f4fcfc;
+        background-color: #62cece;
+      }
+
+      .container-fluid {
+        position: relative;
+        top: 100px;
+        left: 55rem;
+        background-color: #cadcec;
+        margin: 0;
+        padding: 0;
+        width: 30rem;
+        height: 30rem;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        /* Other styles for the container-fluid */
+      }
+
+      .jumbotron {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 600px; /* Adjust the value if needed */
+        width: 100%;
+        height: auto;
+        margin: auto;
+      }
+
+      .custom-btn {
+        width: 150px;
+      }
+ 
+</style>
+
+</head>
+<body>
+
+ <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+      <a class="navbar-brand" th:href="@{homePage}"
+        ><img src="images/Logo1.png" alt="OPDcare"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-center" th:href="@{homePage}">Home</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link text-center" th:href="@{patientPage}">Patient</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" th:href="@{doctorPage}">Doctor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" th:href="@{receptionistPage}"
+              >Receptionist</a
+            >
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link text-center" th:href="@{adminPage}">Admin</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" href="homePage1.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-center" href="homePage1.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- BUTTONS -->
+
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+          <a
+            id="signin"
+            class="btn btn-lg custom-btn"
+            th:href="@{adminSignin}"
+            role="button"
+          >
+            Sign In
+          </a>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <a
+            id="register"
+            class="btn btn-lg custom-btn"
+            th:href="@{adminRegister}"
+            role="button"
+            >Register</a
+          >
+        </div>
+      </div>
+    </div>
+<!--  
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{homePage}">CLINIC OPD</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{homePage}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{patientPage}">Patient</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{doctorPage}">Doctor</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" th:href="@{adminPage}">Admin</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" th:href="@{receptionistPage}">Receptionist</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+   <div class="container mt-4">
+  <div class="jumbotron">
+    <a class="btn btn-primary btn-lg custom-btn" th:href="@{adminSignin}" role="button">Sign In</a>
+    <a class="btn btn-primary btn-lg custom-btn" th:href="@{adminRegister}" role="button">Register</a>
+  </div>
+</div>
+  
+  
+
+<h1>Admin Page</h1>
+-->
+</body>
+</html>

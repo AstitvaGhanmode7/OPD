@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+
+.custom-btn {
+  margin-right: 10px;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.custom-btn:hover {
+  background-color: #0069d9;
+  color: #fff;
+}

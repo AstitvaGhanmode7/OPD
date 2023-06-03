@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet"
+ href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+ crossorigin="anonymous">
+
+<style>
+        /*NAVBAR*/
+
+      .navbar-brand img {
+        width: 140px; /* Adjust the width to your desired size */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 10px; /* Add margin to the right if needed */
+      }
+      /* Custom CSS */
+      .navbar {
+        /* background-color: #85f687;*/
+        background-color: #cadcec;
+        height: 70px;
+        position: relative;
+        z-index: 9999; /* Increase the height of the navbar */
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      }
+
+      .navbar-brand {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-left: 60px;
+      }
+
+      .navbar-nav .nav-item .nav-link {
+        font-size: 18px;
+        padding-right: 40px;
+
+        color: #333;
+      }
+
+      .navbar-nav .nav-item .nav-link:hover {
+        color: #007bff;
+      }
+
+      /* Move navigation items to the right */
+      .navbar-nav {
+        margin-left: 50rem;
+      }
+      /* green #62CECE*/
+
+      /* Custom style for navbar links and logo */
+      .navbar-brand {
+        color: red; /* Change the color of the logo */
+      }
+
+      .navbar-toggler-icon {
+        background-color: rgb(
+          0,
+          0,
+          0
+        ); /* Change the background color of the button */
+      }
+      .nav-link:hover {
+        color: #f4fcfc !important; /* Change the text color to #F4FCFC */
+        background-color: #62cece !important; /* Change the box color to #62CECE */
+        border-radius: 10px; /* Make the box corners round */
+      }
+
+      /* SECTION1 */
+      .section1 {
+        background-color: #cadcec;
+        height: 41rem; /* Adjust the height as needed */
+        position: relative;
+        bottom: 70px;
+      }
+
+      .home-page-image {
+        width: 455px;
+        height: 558px;
+        position: absolute;
+        top: 13vh;
+        left: 50rem;
+      }
+
+      .container-fluid {
+        padding-right: 0px;
+        padding-left: 0px;
+      }
+
+      .BA .container-fluid {
+        background-color: #f0f0f0;
+        width: 880px;
+        height: 510px;
+        border-radius: 2px;
+        position: relative;
+        top: 100px;
+        left: 253px;
+      }
+
+      .bookAppointment {
+        margin: auto;
+        background-color: #ffffff;
+        width: 80%;
+        height: 80%;
+        border-radius: 2px;
+        position: relative;
+        top: 49px;
+      }
+
+      .bookHeading {
+        position: relative;
+        top: 50px;
+        left: 140px;
+      }
+
+      
+      .section-1 {
+        /*background-color: #62cece;*/
+        height: 42.7rem;
+      }
+
+      .home-qoute {
+        background-color: white;
+        position: relative;
+        top: 7rem;
+        left: 20rem;
+        width: 55rem;
+        height: 30rem;
+        margin: 0 0 0 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+
+      .patient-img {
+        position: relative;
+        left: 500px;
+        bottom: 135px;
+        width: 25rem;
+      }
+
+      .heading {
+        position: relative;
+        top: 100px;
+        left: 129px;
+        font-size: 7vh;
+      }
+
+      description {
+        position: relative;
+        top: 127px;
+        left: 127px;
+      }
+    </style>
+
+</head>
+<body>
+
+
+  <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+      <a class="navbar-brand" th:href="@{/loginDoctor(username=${username}, password=${password})}"><img src="images/Logo1.png" alt="OPDcare" /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link text-center" th:href="@{/doctor/profile(username=${username})}">Profile</a>
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link text-center" th:href="@{/doctor/appointmentHistory(username=${username})}"
+              >Appointments</a
+            >
+          </li>
+
+          
+          <li class="nav-item">
+            <a class="nav-link text-center" th:href="@{/homePage}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+    <br>
+
+<!-- MAIN CONTENT -->
+
+	<h4>APPOINTMENT HISTORY</h4>
+<br>
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Appointment ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Prescription</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="appointment : ${appointments}">
+            <td th:text="${appointment.id}"></td>
+            <td th:text="${appointment.date}"></td>
+            <td th:text="${appointment.time}"></td>
+            <td th:text="${appointment.patient.name}"></td>
+             <td>
+            <a th:href="@{/prescription/create(appointmentId=${appointment.id}, username=${username})}">
+			    Prescribe
+			</a>
+        </td>
+        </tr>
+    </tbody>
+</table>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	
+</body>
+</html>
